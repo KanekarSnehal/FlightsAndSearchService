@@ -1,19 +1,19 @@
-const { City } = require("../models/index");
+const { City } = require("../models");
 
-class CityRepository{
-    async createCity({ name }){
-        try{
+class CityRepository {
+    async createCity({ name }) {
+        try {
             const city = await City.create({ name });
             return city;
         }
-        catch(e){
+        catch (e) {
             console.log(e);
-            throw {e}
+            throw { e }
         }
     }
 
-    async deleteCity({ cityId }){
-        try{
+    async deleteCity(cityId) {
+        try {
             await City.destroy({
                 where: {
                     id: cityId
@@ -21,14 +21,14 @@ class CityRepository{
             });
             return true;
         }
-        catch(e){
+        catch (e) {
             console.log(e);
-            throw {e}
+            throw { e }
         }
     }
 
-    async updateCity(cityId, data){
-        try{
+    async updateCity(cityId, data) {
+        try {
             const city = await City.update(data, {
                 where: {
                     id: cityId
@@ -36,20 +36,20 @@ class CityRepository{
             });
             return city;
         }
-        catch(e){
+        catch (e) {
             console.log(e);
-            throw {e};
+            throw { e };
         }
     }
 
-    async getCity(cityId){
-        try{
+    async getCity(cityId) {
+        try {
             const city = await City.findByPk(cityId);
             return city;
         }
-        catch(e){
+        catch (e) {
             console.log(e);
-            throw {e}
+            throw { e }
         }
     }
 }

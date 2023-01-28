@@ -1,53 +1,53 @@
-const {CityRepository} = require("../respository");
+const { CityRepository } = require("../respository");
 
-class CityService{
-    constructor(){
+class CityService {
+    constructor() {
         this.cityRepository = new CityRepository();
     }
 
-    async createCity(data){
-        try{
+    async createCity(data) {
+        try {
             const city = await cityRepository.createCity(data);
             return city;
         }
-        catch(e){
+        catch (e) {
             console.log(e);
-            throw {e}
+            throw { e }
         }
     }
 
-    async deleteCity(cityId){
-        try{
+    async deleteCity(cityId) {
+        try {
             const response = await this.cityRepository.deleteCity(cityId);
             return response;
         }
-        catch(e){
+        catch (e) {
             console.log(e);
-            throw {e}
+            throw { e }
         }
     }
 
-    async updateCity(cityId, data){
-        try{
+    async updateCity(cityId, data) {
+        try {
             const city = await this.cityRepository.updateCity(cityId, data);
             return city;
         }
-        catch(e){
+        catch (e) {
             console.log(e);
-            throw {e};
+            throw { e };
         }
     }
 
-    async getCity(cityId){
-        try{
+    async getCity(cityId) {
+        try {
             const city = await this.cityRepository.getCity(cityId);
             return city;
         }
-        catch(e){
+        catch (e) {
             console.log(e);
-            throw {e}
+            throw { e }
         }
     }
 }
 
-module.exports =  CityService;
+module.exports = CityService;
