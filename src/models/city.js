@@ -2,6 +2,18 @@
 const {
   Model
 } = require('sequelize');
+
+/**
+ * @typedef {{name: string}} City
+ */
+
+/**
+ * 
+ * @param {*} sequelize 
+ * @param {*} DataTypes 
+ * @returns 
+ */
+
 module.exports = (sequelize, DataTypes) => {
   class City extends Model {
     /**
@@ -16,12 +28,13 @@ module.exports = (sequelize, DataTypes) => {
   City.init({
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: false,        // allowNull defaults to true
       unique: true
     },
   }, {
-    sequelize,
-    modelName: 'City',
+    // Other model options go here
+    sequelize,                // We need to pass the connection instance
+    modelName: 'City',        // We need to choose the model name
   });
   return City;
 };
