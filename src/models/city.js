@@ -2,18 +2,6 @@
 const {
   Model
 } = require('sequelize');
-
-/**
- * @typedef {{name: string}} City
- */
-
-/**
- * 
- * @param {*} sequelize 
- * @param {*} DataTypes 
- * @returns 
- */
-
 module.exports = (sequelize, DataTypes) => {
   class City extends Model {
     /**
