@@ -38,9 +38,9 @@ class CityService {
         }
     }
 
-    async getCity(cityId) {
+    async getCities(cityId) {
         try {
-            const city = await this.cityRepository.getCity(cityId);
+            const city = await this.cityRepository.getCities(cityId);
             return city;
         }
         catch (e) {

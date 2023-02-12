@@ -48,9 +48,9 @@ class CityRepository {
         }
     }
 
-    async getCity(cityId) {
+    async getCities(cityId) {
         try {
-            const city = await City.findByPk(cityId);
+            const city = await cityId ? City.findByPk(cityId) : City.findAll();
             return city;
         }
         catch (e) {
