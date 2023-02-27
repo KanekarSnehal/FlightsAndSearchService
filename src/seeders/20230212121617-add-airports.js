@@ -5,59 +5,80 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     /**
      * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
     */
     await queryInterface.bulkInsert('Airports', [
       {
         name: 'Indira Gandhi International Airport',
-        cityId: 1,
+        cityId: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Chhatrapati Shivaji Maharaj International Airport',
-        cityId: 9,
+        cityId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'D. B. Patil International Airport',
+        cityId: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Pune International Airport',
-        cityId: 12,
+        cityId: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Jay Prakash Narayan International Airport',
-        cityId: 13,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        name: 'Lal Bahadur Shastri International Airport',
-        cityId: 14,
+        cityId: 11,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
         name: 'Devi Ahilya Bai Holkar Airport',
-        cityId: 15,
+        cityId: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
+      {
+        name: 'Kempegowda International Airport Bengaluru',
+        cityId: 10,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Hindustan Aeronautics Limited Airport',
+        cityId: 10,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Hindustan Aeronautics Limited Airport',
+        cityId: 10,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Mysuru Airport',
+        cityId: 10,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Hubballi Airport',
+        cityId: 10,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      }
     ])
   },
 
   async down(queryInterface, Sequelize) {
     /**
      * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
      */
   }
 };
